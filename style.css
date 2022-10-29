@@ -7,6 +7,18 @@ body {
     margin: 0.5rem 0rem;
 }
 
+.headline {
+    width: 65rem;
+    margin: auto;
+}
+
+@media  screen and (max-width:1240px) {
+    .headline {
+        width: auto;
+        margin-left: 6vh;
+    }
+}
+
 .headline,
 .price-plan_head {
     font-size: 1.8rem;
@@ -15,12 +27,13 @@ body {
 
 .main-tweets_section {
     background: hsl(184, 100%, 86%);
-    padding: 2rem 10rem;
+    padding: 2rem 1rem;
 }
 
 .tweets-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1.2rem;
     margin: 1.5rem 0rem;
     align-items: flex-start;
 
@@ -29,6 +42,7 @@ body {
 .tweets {
     box-shadow: 0px 0px 2px rgba(126, 125, 125, 0.137);
     width: 20.7rem;
+    width: clamp(20rem, 30%, 20.7rem);
     padding: 1.2rem 1.2rem 0.3rem 1.2rem;
     background: hsla(192, 100%, 98%, 0.945);
     -webkit-border-radius: 5px;
@@ -67,7 +81,7 @@ body {
 .tweet {
     margin: 1rem 1rem 0rem 0rem;
     opacity: 90%;
-    line-height: 2;
+    line-height: 1.5;
 }
 .handle {
     font-weight: 100;
@@ -95,6 +109,7 @@ body {
 .price-plan_container {
     text-align: center;
     width: 28rem;
+    width: clamp(20rem, 50%, 28rem);
     margin: 3rem auto;
 }
 
@@ -159,4 +174,23 @@ body {
 .price span {
     font-weight: 100;
     font-size: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .tweets-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .headline {
+        margin: auto;
+        text-align: center;
+    }
+
+    .tweets,
+    .price-plan_container {
+        width: 95vw;
+    }
 }
